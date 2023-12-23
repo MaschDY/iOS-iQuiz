@@ -8,22 +8,26 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    @IBOutlet weak var questionTitleLabel: UILabel!
+    
+    @IBOutlet var responseButtons: [UIButton]!
+    
+    @IBAction func responseButtonClick(_ sender: UIButton) {
+        print(sender.tag)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureLayout()
     }
-    */
-
+    
+    func configureLayout() {
+        navigationItem.hidesBackButton = true
+        
+        responseButtons.forEach { button in
+            button.layer.cornerRadius = 12.0
+        }
+    }
 }
