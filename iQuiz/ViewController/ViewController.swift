@@ -13,10 +13,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureButtonLayout()
+        self.configureButtonLayout()
     }
     
-    func configureButtonLayout() {
+    private func configureButtonLayout() {
+        navigationItem.hidesBackButton = true
         buttonStartQuiz.layer.cornerRadius = 12
     }
     
